@@ -1,0 +1,175 @@
+\documentclass[12pt, a4paper]{article} % Defines the font size and the paper format
+% chktex-file 44
+\newcommand{\subsubsubsection}[1]{\vspace{1em}\noindent\textbf{#1}\vspace{0.5em}\newline}
+\usepackage{array}
+\usepackage{microtype}
+
+\usepackage[labelfont=it,textfont=it,font=small]{caption}
+\captionsetup[table]{skip=4pt}
+
+\usepackage{amsmath}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{pdfpages}
+
+\usepackage{setspace}
+
+% Link
+\usepackage[hidelinks]{hyperref}
+
+% layout orientation
+\usepackage{pdflscape}
+
+% Images settings
+\usepackage{graphicx}
+\graphicspath{ {resources/} }
+
+\usepackage{float}
+
+% Line spacing
+\linespread{1.25}
+
+% Margins
+\usepackage{geometry}
+     \geometry{
+         a4paper,
+         left=25.4mm,
+         right=25.4mm,
+         top=20mm,
+         bottom=25.4mm
+}
+% \usepackage[margin=1in]{geometry}
+
+% Line spacing
+\setstretch{1.5}
+
+% For footnotes (single-spaced)
+\usepackage[bottom]{footmisc}
+\setlength{\footnotesep}{0.5\baselineskip} % optional adjustment
+\renewcommand{\footnotelayout}{\singlespacing}
+
+%% Set paragraph behavior.
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{2mm}
+
+% Header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancypagestyle{plain}{}
+\fancyhead[R]{CHAPTER \leftmark{}}
+\fancyfoot[R]{Page \thepage}
+
+\AtBeginDocument{\renewcommand*{\nameyeardelim}{\addcomma\space}}
+
+% Font type 
+% \usepackage{fontspec}
+% \setmainfont{Arial}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% This is for lorem ipsum text, you can remove.
+\usepackage{lipsum} 
+
+% Add a page break before a new section
+\usepackage{titlesec}
+\titleclass{\section}{top}
+\newcommand\sectionbreak{\clearpage}
+
+% Packages related to bibliography
+% \usepackage[backend=biber, bibencoding=utf8, style=authoryear, citestyle=authoryear, url = false]{biblatex}
+% \usepackage[english]{babel}
+% \usepackage{csquotes}
+
+
+
+% Packages related to bibliography
+\usepackage[backend=biber, bibencoding=utf8, style=authoryear, citestyle=authoryear, url = false, giveninits=true, uniquename=init, dashed=false, maxcitenames=3, minnames=1, maxbibnames=99, uniquelist=false]{biblatex}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\addbibresource{resources/library.bib}
+
+% Sorting the order of surname and initial in bibliography to always be Surname, Initial of First Name, even for multiple authors. 
+\DeclareNameAlias{sortname}{family-given}
+\DeclareNameAlias{default}{family-given}
+
+% Add a comma between author and year
+\DeclareDelimFormat{parens}{\addspace\textnormal{(}\iffieldundef{shorthand}{}{\printfield{shorthand}\addspace}\printfield{year}\textnormal{)}}
+\renewcommand*{\nameyeardelim}{\addcomma\space} % Add a comma
+
+% \usepackage[style=authoryear, maxcitenames=3, mincitenames=1, maxbibnames=99, backend=biber]{biblatex}
+
+
+
+
+
+
+% packages and acronyms
+\usepackage[nolist,nohyperlinks]{acronym}
+
+% Add acronym definitions in the document when needed.
+
+\setlength{\headheight}{14.49998pt}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\title{RAG-based Chatbot on CORD-19 Dataset}
+\begin{document}
+\maketitle
+\pagenumbering{roman}
+\thispagestyle{empty}
+
+% Cover page: fill in the empty fields below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/firstPageHeader.png}
+\end{figure}
+
+\vspace{10em}
+\begin{tabular}{lp{11cm}}
+Student Name: Mohammed Grech& \\
+Student Number: 2123147& \\[1em]
+
+Module Code: 7CS134/MH1& \\
+Module Name: Data Mining and Analytics& \\
+
+Submission Date: TBDS& \\
+\end{tabular}
+
+\vspace{10em}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{images/firstPageFooter.png}
+\end{figure}
+
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\section{Introduction}
+
+\section{Scope}
+
+\section{Methodology}
+
+\section{Data Preparation}
+
+\section{Evaluation and Findings}
+
+\[
+\text{NDCG}@K = \frac{\text{DCG}@K}{\text{IDCG}@K}
+\]
+
+\section{Limitations and Future Work}
+
+\section{Conclusion}
+
+\end{document}
